@@ -1,0 +1,63 @@
+<title>wget-google-drive</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/blocks.css" />
+<link rel="stylesheet" href="css/simple.css" />
+<body class="color themed">
+    
+    <main >
+    
+        <h1>🥏 wget-google-drive</h1>
+    
+        <p> <a href="https://github.com/Akshay090/wget-google-drive">wget-google-drive</a> Converts google drive sharable url for a file to wget </p>
+    
+        
+        <div class="color themed">
+            <div class="searchBlock">
+
+                <div class="fixed wrapper block">
+                    <input 
+                    id="drive-link"
+                    type="text" 
+                    value=""
+                    placeholder="https://drive.google.com/file/d/0B23nSyku-_uic3RhcnRlcl9maWxl/view?usp=sharing"/>
+                </div>
+
+                <div class="fixed wrapper block fit-content">
+                    <input 
+                    id="file-name"
+                    type="text" 
+                    value=""
+                    placeholder="file-name.pdf"/>
+                </div>
+
+                <label 
+                onchange="setCheck()"
+                class="block container">
+                    large file > 100 mb
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                <button 
+                id="go" 
+                onclick="process()"
+                class="accent block searchButton fit-content">Go!</button>
+            
+                <div class="card fixed block">
+                    <p id="result"> wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=FILEID' -O FILENAME</p>
+                    <button id="copy" onclick="copyToClipboard()" class="accent block">Copy</button>
+                </div>
+
+            </div>
+    
+           
+    </main>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
